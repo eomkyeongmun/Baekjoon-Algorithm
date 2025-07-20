@@ -1,10 +1,5 @@
-//import java.io.BufferedReader;
-//import java.io.IOException;
-//import java.io.InputStreamReader;
-//import java.util.Arrays;
-//import java.util.StringTokenizer;
-// 왜 틀린지 모르겠음 다시 공부
-
+import java.io.*;
+import java.util.*;
 //시간 제한	메모리 제한	제출	정답	맞힌 사람	정답 비율
 //        2 초	256 MB	73660	18935	13473	24.611%
 //        문제
@@ -20,79 +15,6 @@
 //        출력
 //        좋은 수의 개수를 첫 번째 줄에 출력한다.
 //골드4
-////public class Code_1253 {
-////    public static void main(String[] args) throws IOException {
-////        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-////        StringTokenizer st = new StringTokenizer(br.readLine());
-////        int n = Integer.parseInt(st.nextToken());
-////        int[] a = new int [n+1];
-////        int count=0;
-////
-////        st = new StringTokenizer(br.readLine());
-////        for(int i=1;i<=n;i++){
-////            a[i] = Integer.parseInt(st.nextToken());
-////        }
-////
-////        Arrays.sort(a);
-////        int min=1;
-////        int max=n;
-////        if(a[min]>=0) //음수가없을때
-////        {
-////            for (int i = 3; i <= n; i++) {
-////                min = 1;
-////                max = i-1;
-////                while (max>min) {
-////                    if (a[min] + a[max] == a[i]) {
-////                        count++;
-////                        break;
-////                    } else if (a[min] + a[max] < a[i]) {
-////                        min++;
-////                    } else if (a[min] + a[max] > a[i]) {
-////                        max--;
-////                    }
-////
-////
-////                }
-////
-////
-////            }
-////        }
-////
-////        else {
-////            for (int i = 1; i <= n; i++) {
-////                min = 1;
-////                max = n;
-////                while (max > min) {
-////                    if (a[min] + a[max] == a[i]) {
-////                        if (min != i && max != i) {
-////                            count++;
-////                            break;
-////                        } else if (min == i) {
-////                            min++; // 자기 자신이면 건너뛰고 계속
-////                        } else if (max == i) {
-////                            max--;
-////                        }
-////                    } else if (a[min] + a[max] < a[i]) {
-////                        min++;
-////                    } else {
-////                        max--;
-////                    }
-////                }
-////
-////                }
-////
-////
-////            }
-////        System.out.println(count);
-////        }
-////
-////
-////}
-
-
-import java.io.*;
-import java.util.*;
-
 public class Code_1253 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -133,3 +55,80 @@ public class Code_1253 {
         System.out.println(count);
     }
 }
+
+//틀린코드
+// 왜 틀린지 모르겠음 다시 공부
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.util.Arrays;
+//import java.util.StringTokenizer;
+//
+//public class Code_1253 {
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        int n = Integer.parseInt(st.nextToken());
+//        int[] a = new int [n+1];
+//        int count=0;
+//
+//        st = new StringTokenizer(br.readLine());
+//        for(int i=1;i<=n;i++){
+//            a[i] = Integer.parseInt(st.nextToken());
+//        }
+//
+//        Arrays.sort(a);
+//        int min=1;
+//        int max=n;
+//        if(a[min]>=0) //음수가없을때
+//        {
+//            for (int i = 3; i <= n; i++) {
+//                min = 1;
+//                max = i-1;
+//                while (max>min) {
+//                    if (a[min] + a[max] == a[i]) {
+//                        count++;
+//                        break;
+//                    } else if (a[min] + a[max] < a[i]) {
+//                        min++;
+//                    } else if (a[min] + a[max] > a[i]) {
+//                        max--;
+//                    }
+//
+//
+//                }
+//
+//
+//            }
+//        }
+//
+//        else {
+//            for (int i = 1; i <= n; i++) {
+//                min = 1;
+//                max = n;
+//                while (max > min) {
+//                    if (a[min] + a[max] == a[i]) {
+//                        if (min != i && max != i) {
+//                            count++;
+//                            break;
+//                        } else if (min == i) {
+//                            min++; // 자기 자신이면 건너뛰고 계속
+//                        } else if (max == i) {
+//                            max--;
+//                        }
+//                    } else if (a[min] + a[max] < a[i]) {
+//                        min++;
+//                    } else {
+//                        max--;
+//                    }
+//                }
+//
+//                }
+//
+//
+//            }
+//        System.out.println(count);
+//        }
+//
+//
+//}
