@@ -22,38 +22,27 @@ public class Code_11003 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
         int N = Integer.parseInt(st.nextToken());
         int L = Integer.parseInt(st.nextToken());
-
         int[] a = new int[N];
         st = new StringTokenizer(br.readLine());
+
         for (int i = 0; i < N; i++) {
             a[i] = Integer.parseInt(st.nextToken());
         }
-
         Deque<Integer> dq = new ArrayDeque<>();
-
         for (int i = 0; i < N; i++) {
             int now = a[i];
-
-
             while (!dq.isEmpty() && a[dq.peekLast()] > now) {
                 dq.pollLast();
             }
-
-
             dq.offerLast(i);
-
 
             if (dq.peekFirst() <= i - L) {
                 dq.pollFirst();
             }
-
-
             bw.write(a[dq.peekFirst()] + " ");
         }
-
         bw.close();
         br.close();
     }

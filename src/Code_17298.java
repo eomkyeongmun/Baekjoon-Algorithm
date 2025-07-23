@@ -18,26 +18,22 @@ import java.util.*;
 public class Code_17298 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(br.readLine());
-
         int[] a = new int[n];
         int[] nge = new int[n]; //오큰수
         Arrays.fill(nge, -1);  // 기본값 -1
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
             a[i] = Integer.parseInt(st.nextToken());
         }
-
         Stack<Integer> stack = new Stack<>();
-
         for (int i = 0; i < n; i++) {
             while (!stack.isEmpty() && a[stack.peek()] < a[i]) {
                 nge[stack.pop()] = a[i];
             }
             stack.push(i);
         }
-
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
             sb.append(nge[i]).append(" ");

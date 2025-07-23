@@ -20,7 +20,6 @@ public class Code_1874 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -29,19 +28,15 @@ public class Code_1874 {
 
         Stack<Integer> stack = new Stack<>();
         StringBuilder sb = new StringBuilder();
-
         int current = 1;
         boolean possible = true;
-
         for (int i = 0; i < n; i++) {
             int target = a[i];
-
 
             while (current <= target) {
                 stack.push(current++);
                 sb.append("+\n");
             }
-
 
             if (!stack.isEmpty() && stack.peek() == target) {
                 stack.pop();
@@ -51,7 +46,6 @@ public class Code_1874 {
                 break;
             }
         }
-
         if (possible) {
             System.out.print(sb.toString());
         } else {
