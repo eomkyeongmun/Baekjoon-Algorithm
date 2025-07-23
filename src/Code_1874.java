@@ -46,6 +46,7 @@ public class Code_1874 {
                 break;
             }
         }
+
         if (possible) {
             System.out.print(sb.toString());
         } else {
