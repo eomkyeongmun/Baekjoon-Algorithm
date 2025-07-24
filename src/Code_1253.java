@@ -24,7 +24,7 @@ public class Code_1253 {
         for (int i = 0; i < n; i++) {
             a[i] = Integer.parseInt(st.nextToken());
         }
-
+        //함수 sort
         Arrays.sort(a);
         int count = 0;
 
