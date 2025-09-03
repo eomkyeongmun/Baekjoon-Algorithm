@@ -1,4 +1,4 @@
-package Math_NumberTheory;
+package DP;
 
 import java.util.Scanner;
 
